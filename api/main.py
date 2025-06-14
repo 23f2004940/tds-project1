@@ -1,3 +1,16 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "fastapi",
+#     "pydantic",
+#     "openai",
+#     "numpy",
+#     "scikit-learn",
+#     "tiktoken",
+#     "uvicorn"
+# ]
+# ///
+
 import os
 import base64
 import numpy as np
