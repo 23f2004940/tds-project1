@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+openai
+tqdm
+tiktoken
+numpy
+fastapi
+pydantic
+scikit-learn
+uvicorn
