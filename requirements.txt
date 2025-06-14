@@ -1,10 +1,7 @@
-requests
-beautifulsoup4
-openai
-tqdm
-tiktoken
-numpy
 fastapi
 pydantic
+openai
+numpy
 scikit-learn
+tiktoken
 uvicorn
