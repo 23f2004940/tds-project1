@@ -9,6 +9,8 @@ from openai import OpenAI
 from typing import Optional, List
 from sklearn.metrics.pairwise import cosine_similarity
 from fastapi.middleware.cors import CORSMiddleware
+from pathlib import Path
+
 
 # Initialize OpenAI client
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -44,7 +46,8 @@ ANSWER_SYSTEM_PROMPT = (
 
 ENCODER = tiktoken.encoding_for_model(EMBED_MODEL)
 
-archive = np.load("chunks.npz", allow_pickle=True)
+CHUNKS_PATH = Path(__file__).parent.parent / "data" / "chunks.npz"
+archive = np.load(CHUNKS_PATH, allow_pickle=True)
 embeddings = archive["embeddings"]
 metadata = [m for m in archive["metadata"].tolist() if m]
 
