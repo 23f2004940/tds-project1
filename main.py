@@ -59,11 +59,10 @@ ANSWER_SYSTEM_PROMPT = (
 
 ENCODER = tiktoken.encoding_for_model(EMBED_MODEL)
 
-CHUNKS_PATH = Path(__file__).parent.parent / "data" / "chunks.npz"
+CHUNKS_PATH = Path(__file__).parent / "chunks.npz"
 archive = np.load(CHUNKS_PATH, allow_pickle=True)
 embeddings = archive["embeddings"]
 metadata = [m for m in archive["metadata"].tolist() if m]
-
 app = FastAPI()
 
 app.add_middleware(
